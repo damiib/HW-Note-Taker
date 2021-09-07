@@ -1,4 +1,4 @@
-const util = require('util');
+const util = require("util");
 const fs = require("fs");
 
 //google npm uuid
@@ -32,7 +32,7 @@ class Notes {
     });
   }
 
-  saveNote(data) {
+  createNote(data) {
     const { title, text } = data;
 
     //use uuid to construct a unique id
@@ -42,14 +42,18 @@ class Notes {
       text,
       id: uuid(),
     };
-// get the current data that lives in the db.json and add our new note at the end
-    return this.getNotes().then((note) => {
-        [...note, newNote]
-    }).then((newNotes)=> this.write(newNotes)).then(()=> newNote);
+
+    // get the current data that lives in the db.json and add our new note at the end
+    return this.getNotes()
+      .then((note) => [...note, newNote])
+      .then((newNotes) => this.write(newNotes))
+      .then(() => newNote);
   }
 
-  removeNote(id){
-    return this.getNotes().then((data)=> data.filter((filteredData)=> filteredData.id !== id)).then((finalData)=> this.write(finalData))
+  removeNote(id) {
+    return this.getNotes()
+      .then((data) => data.filter((filteredData) => filteredData.id !== id))
+      .then((finalData) => this.write(finalData));
   }
 }
 

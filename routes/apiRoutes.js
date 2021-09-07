@@ -9,11 +9,12 @@ router.get("/notes", (req, res) => {
     })
     .catch((err) => res.status(500).json(err));
 });
-//erroring out on promise.
+
+
 
 router.post("/notes", (req, res) => {
   notes
-    .saveNote(req.body)
+    .createNote(req.body)
     .then((data) => res.json(data))
     .catch((err) => res.status(500).json(err));
 });
