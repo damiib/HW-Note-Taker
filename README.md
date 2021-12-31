@@ -40,7 +40,7 @@
 
   ## Questions
 
-  [damiib](https://github.com/damiib)
+  [sheluvsdesign](https://github.com/sheluvsdesign)
 
-If you have questions, please contact me at: aasjokim@gmail.comnod
+If you have questions, please contact me at: a@gmail.comnod
 
